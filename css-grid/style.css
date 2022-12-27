@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Atribua um nome ao elemento html correspondente para referenciarmos no grid */
+.item1 {
+    grid-area: header;
+
+}
+
+.item2 {
+    grid-area: menu;
+}
+
+.item3 {
+    grid-area: main;
+    height: 200px;
+}
+
+.item4 {
+    grid-area: right;
+    height: 200px;
+}
+
+.item5 {
+    grid-area: footer;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#material-complementar {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#material-complementar a {
+    display: block;
+    width: fit-content;
+}
+
+/* Defina o container como grid usando a chave 'display' e organize o grid com a chave 'grid-template-areas' */
+.grid-container {
+    display: grid;
+    /* Nesse caso temos 6 colunas e 3 linhas */
+    grid-template-areas:
+        'header header header header header header'
+        'menu   main   main   main   main   right'
+        'menu   footer footer footer footer footer';
+    gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+    margin-bottom: 100px;
+}
+
+.grid-container>div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+/* TESTE 2 */
+.grid-container2 {
+    display: grid;
+    background-color: #2196F3;
+    gap: 10px;
+    padding: 10px;
+    /* row = height */
+    grid-template-rows: 200px 1fr 1fr 1fr; 
+    /* column = largura */
+    grid-template-columns: 400px 1fr;
+}
+
+.grid-container2>div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+
+
+
+/* Ponto de quebra. max-width = Até a largura informada aplique esse estilo */
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        display: grid;
+        /* Quando a tela for menor(600px) teremos 6 colunas E 4 linhas */
+        grid-template-areas:
+            'header header header header header header'
+            'menu menu menu menu menu menu'
+            'main main main main right right'
+            'footer footer footer footer footer footer';
+        gap: 10px;
+        background-color: #2196F3;
+        padding: 10px;
+    }
+}

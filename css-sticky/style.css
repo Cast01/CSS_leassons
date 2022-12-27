@@ -1,0 +1,28 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+header {
+    background:violet;
+    width:100%;
+    height:100px;
+}
+section {
+    padding:15px;
+    background:red;
+    width:100%;
+    height:600px;
+}
+section div {
+    background:green;
+    width:200px;
+    height:200px;
+    position:sticky;
+    top:15px;
+}
+footer {
+    background:blue;
+    width:100%;
+    height:600px;
+}
